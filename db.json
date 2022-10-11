@@ -1,0 +1,28 @@
+{
+  "people": [
+    {
+      "name": "Rafael Moraes",
+      "gender": "M",
+      "city": "São Gonçalo",
+      "neighborhood": "Porto Velho",
+      "state": "RJ",
+      "id": 4
+    },
+    {
+      "name": "Ferdinando",
+      "gender": "NB",
+      "city": "Rio de Janeiro",
+      "neighborhood": "Penha Circular",
+      "state": "RJ",
+      "id": 9
+    },
+    {
+      "name": "Ricardo Godinho",
+      "gender": "M",
+      "city": "Porto Alegre",
+      "neighborhood": "Rubem Berta",
+      "state": "RS",
+      "id": 10
+    }
+  ]
+}
