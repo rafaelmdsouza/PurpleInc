@@ -2,7 +2,7 @@
 
 <h1 align="center"> WELCOME TO PURPLE INC.</h1>
 
-Neste repositório está a primeira página de um futuro projeto SPA!
+### Neste repositório está a primeira página de um futuro projeto SPA!
 
 ### Aqui contém:
 - Listagem, paginação e ordenação :notebook:
