@@ -6,19 +6,19 @@
       <input #search matInput autocomplete="off" (keyup)="applyFilter($event)" />
     </mat-form-field>
   </div>
-
+<div class="overflow-y-auto max-h-[65vh] p-5">
   <table
     #table
     mat-table
     [dataSource]="dataSource"
-    class="shadow-md bg-stone-50"
+    class="shadow-md bg-stone-50 "
     matSort
     (matSortChange)="sortData($event)"
     matSortDisableClear="true"
   >
     <ng-container matColumnDef="name">
       <th
-        mat-sort-header
+        mat-sort-header="name"
         mat-header-cell
         *matHeaderCellDef
         class="font-semibold text-center w-2/6"
@@ -88,6 +88,7 @@
       class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap hover:bg-violet-50"
     ></tr>
   </table>
+</div>
   <mat-paginator  class="bg-stone-100 shadow-md" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
   <div class="flex self-center mt-5">
     <button

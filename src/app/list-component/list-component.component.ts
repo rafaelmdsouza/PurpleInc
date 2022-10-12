@@ -18,6 +18,8 @@ export class ListComponentComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<any>;
 
+  sortSetting: Sort
+
   displayedColumns: string[] = [
     'name',
     'gender',
@@ -33,6 +35,7 @@ export class ListComponentComponent implements OnInit {
 
   ngOnInit() {
     this.getPerson();
+    this.sortSetting = {active: 'name', direction:'asc'}
   }
 
   getPerson() {
@@ -40,6 +43,7 @@ export class ListComponentComponent implements OnInit {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this.sortData(this.sortSetting);
     });
   }
 
@@ -63,15 +67,20 @@ export class ListComponentComponent implements OnInit {
   }
 
   sortData(dataSort: Sort){
+    this.sortSetting = dataSort;
+
+    if(!dataSort.active || dataSort.direction =='')
+    return
+
     this.dataSource.sortData = (data: PersonViewModel[], sort: MatSort) => {
       return data.sort((a, b) => {
         let directionAsc = sort.direction === 'asc';
-        return this.compare(a.name.toLowerCase(), b.name.toLowerCase(), directionAsc)
+          return this.compare(a.name.toLowerCase(), b.name.toLowerCase(), directionAsc)
       });
      }
   }
 
-  private compare(a: number | string, b: number | string, isAsc: boolean) {
+  private compare(a: number|string, b: number | string, isAsc: boolean) {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
 }
