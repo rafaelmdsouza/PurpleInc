@@ -1,6 +1,10 @@
-<mat-toolbar class="flex-auto px-10 py-10 shadow-md  border border-gray-200 bg-gray-50">
-    <mat-icon class ='text-[#6951cb]'>{{icon}}</mat-icon>
-    <span class="ml-3 text-2xl font-bold text-[#6951cb] ">{{headerTitle}}</span>
-    <span class="flex-auto"></span>
-    <span (click)="null" class="text-[#6951cb] hover:text-violet-400">Purple. Inc</span>
+<mat-toolbar class="flex justify-between shadow-md border border-stone-200 bg-stone-50">
+  <span (click)="(null)" class="text-2xl pl-3 font-bold text-[#6951cb] hover:text-violet-400">
+    Purple. Inc
+  </span>
+  <span class="flex-1"></span>
+
+    <mat-icon class="mr-2 self-center text-[#6951cb]">{{ icon }}</mat-icon>
+    <span class="pr-3 font-medium text-[#6951cb]">{{ headerTitle }}</span>
+
 </mat-toolbar>

@@ -1,12 +1,22 @@
 <div class="mt-5 mx-10">
-  <div class="flex justify-center my-5">
-    <mat-form-field class="w-2/5" appearance="outline">
+  <div class="flex align-middle my-5">
+    <mat-form-field class="w-3/5 ml-auto" appearance="standard">
       <mat-icon class="mr-1 align-middle" matPrefix>search</mat-icon>
       <mat-label>Search</mat-label>
       <input #search matInput autocomplete="off" (keyup)="applyFilter($event)" />
     </mat-form-field>
+    <div class="self-center ml-auto">
+      <button
+        mat-raised-button
+        class="hover:bg-violet-400"
+        (click)="openDialog()"
+        color="primary"
+      >
+        Add
+      </button>
+    </div>
   </div>
-<div class="overflow-y-auto max-h-[65vh] p-5">
+<div class="overflow-auto max-h-[53vh]">
   <table
     #table
     mat-table
@@ -85,19 +95,10 @@
     <tr
       mat-row
       *matRowDef="let row; columns: displayedColumns"
-      class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap hover:bg-violet-50"
+      class="font-medium text-gray-900 whitespace-nowrap hover:bg-violet-50"
     ></tr>
   </table>
 </div>
   <mat-paginator  class="bg-stone-100 shadow-md" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-  <div class="flex self-center mt-5">
-    <button
-      mat-raised-button
-      class="hover:bg-violet-400"
-      (click)="openDialog()"
-      color="primary"
-    >
-      Add
-    </button>
-  </div>
+
 </div>
